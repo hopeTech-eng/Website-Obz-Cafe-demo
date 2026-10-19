@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Saltwater Coffee Roasters</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#e8eef0; --surface:#f6f9f9; --ink:#14213d; --muted:#4d5b73;
+  --accent:#f2c230; --on-accent:#14213d; --roast:#4a2c20; --line:#b9c6cc;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f1624; --surface:#18223a; --ink:#e8eef0; --muted:#9fb0c6; --line:#2c3a57; --roast:#e8eef0;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f1624; --surface:#18223a; --ink:#e8eef0; --muted:#9fb0c6; --line:#2c3a57; --roast:#e8eef0;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.6 "DM Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque","DM Sans",system-ui,sans-serif;line-height:1.02;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:68rem;margin:0 auto;padding:0 1.25rem}
+
+header{display:flex;justify-content:space-between;align-items:center;padding:1.25rem 0}
+.logo{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:1.25rem;text-decoration:none}
+nav a{margin-left:1.25rem;text-decoration:none;font-weight:500}
+nav a:hover{text-decoration:underline;text-decoration-color:var(--accent);text-decoration-thickness:3px;text-underline-offset:4px}
+
+.hero{display:grid;gap:2.5rem;padding:3rem 0 4.5rem;align-items:end}
+.hero h1{font-weight:800;font-size:clamp(3.2rem,11vw,7.5rem);letter-spacing:-.035em}
+.hero h1 span{display:block;background:var(--accent);color:var(--on-accent);width:fit-content;padding:0 .12em;margin-top:.06em;transform:rotate(-1.5deg)}
+.hero p{max-width:34rem;color:var(--muted);font-size:1.2rem;margin:1.5rem 0 1.75rem}
+.btn{display:inline-block;background:var(--ink);color:var(--bg);padding:.85rem 1.5rem;border-radius:.4rem;font-weight:500;text-decoration:none}
+.btn:hover{background:var(--roast);color:var(--bg)}
+.board{background:var(--surface);border:2px solid var(--ink);border-radius:.5rem;padding:1.5rem;box-shadow:.5rem .5rem 0 var(--accent)}
+.board h2{font-size:1.5rem;margin-bottom:.25rem}
+.board small{color:var(--muted)}
+.board ul{list-style:none;margin:1rem 0 0;padding:0}
+.board li{display:flex;justify-content:space-between;gap:1rem;padding:.55rem 0;border-top:1px solid var(--line)}
+.board b{font-weight:500}
+
+section{padding:4rem 0;border-top:2px solid var(--ink)}
+section h2{font-size:clamp(2rem,5vw,3.2rem);letter-spacing:-.02em;margin-bottom:2rem}
+.menu{display:grid;gap:2.5rem}
+.menu h3{font-size:1.35rem;margin-bottom:.75rem}
+.item{display:flex;align-items:baseline;gap:.5rem;padding:.4rem 0}
+.item i{flex:1;border-bottom:2px dotted var(--line);transform:translateY(-.25rem)}
+.item .name{font-weight:500}
+.item span.price{font-variant-numeric:tabular-nums}
+
+.about{display:grid;gap:2rem}
+.about p{max-width:38rem;margin:0 0 1rem}
+.facts{background:var(--roast);color:#f6f9f9;border-radius:.5rem;padding:1.75rem}
+.facts h3{font-size:1.4rem;margin-bottom:.75rem;color:var(--accent)}
+.facts p{margin:0 0 .6rem}
+
+.visit{display:grid;gap:2rem}
+table{border-collapse:collapse;width:100%;max-width:28rem}
+td{padding:.55rem 0;border-bottom:1px solid var(--line)}
+td:last-child{text-align:right;font-variant-numeric:tabular-nums}
+tr.today td{font-weight:500;background:linear-gradient(transparent 60%,var(--accent) 60%)}
+address{font-style:normal}
+
+footer{border-top:2px solid var(--ink);padding:1.5rem 0 2rem;color:var(--muted);font-size:.95rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem}
+
+@media (min-width:52rem){
+  .hero{grid-template-columns:1.5fr 1fr}
+  .menu{grid-template-columns:1fr 1fr}
+  .about{grid-template-columns:1.4fr 1fr}
+  .visit{grid-template-columns:1fr 1fr}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="logo" href="#top">Saltwater Coffee</a>
+    <nav aria-label="Main"><a href="#menu">Menu</a><a href="#roastery">Roastery</a><a href="#visit">Visit</a></nav>
+  </header>
+
+  <main id="top">
+    <div class="hero">
+      <div>
+        <h1>Coffee, roasted<span>every Tuesday.</span></h1>
+        <p>Small-batch beans, a short menu and a counter seat with your name on it. Walk in for a flat white, stay for the croissants.</p>
+        <a class="btn" href="#menu">See the menu</a>
+      </div>
+      <aside class="board" aria-label="Today’s brews">
+        <h2>On the bar today</h2>
+        <small>Rotates when we run out</small>
+        <ul>
+          <li><b>Espresso: Harbour Blend</b><span>Cocoa, orange peel</span></li>
+          <li><b>Filter: Ethiopia Guji</b><span>Peach, jasmine</span></li>
+          <li><b>Cold brew: Colombia Huila</b><span>Brown sugar</span></li>
+        </ul>
+      </aside>
+    </div>
+
+    <section id="menu">
+      <h2>Menu</h2>
+      <div class="menu">
+        <div>
+          <h3>Coffee</h3>
+          <div class="item"><span class="name">Espresso</span><i></i><span class="price">$3.00</span></div>
+          <div class="item"><span class="name">Flat white</span><i></i><span class="price">$4.50</span></div>
+          <div class="item"><span class="name">Cappuccino</span><i></i><span class="price">$4.50</span></div>
+          <div class="item"><span class="name">Latte</span><i></i><span class="price">$4.75</span></div>
+          <div class="item"><span class="name">Pour-over</span><i></i><span class="price">$5.50</span></div>
+          <div class="item"><span class="name">Cold brew</span><i></i><span class="price">$5.00</span></div>
+          <p style="color:var(--muted);font-size:.92rem">Oat, almond or soy milk for $0.60 extra.</p>
+        </div>
+        <div>
+          <h3>Food</h3>
+          <div class="item"><span class="name">Butter croissant</span><i></i><span class="price">$3.75</span></div>
+          <div class="item"><span class="name">Cardamom bun</span><i></i><span class="price">$4.25</span></div>
+          <div class="item"><span class="name">Avocado toast</span><i></i><span class="price">$9.50</span></div>
+          <div class="item"><span class="name">Ham &amp; cheese toastie</span><i></i><span class="price">$8.50</span></div>
+          <div class="item"><span class="name">Banana bread</span><i></i><span class="price">$3.50</span></div>
+          <p style="color:var(--muted);font-size:.92rem">Pastries are baked next door and sell out by noon.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="roastery">
+      <h2>We roast what we serve</h2>
+      <div class="about">
+        <div>
+          <p>Every bag on our shelf was roasted in the back room, usually in the last week. We buy directly from three farms and one cooperative, and we pay above the fair-trade floor.</p>
+          <p>Take a bag home: we’ll grind it to suit your brewer, whether that’s a moka pot or a V60.</p>
+        </div>
+        <div class="facts">
+          <h3>Beans to go</h3>
+          <p>Harbour Blend, 250 g: $12</p>
+          <p>Single origin, 250 g: $15</p>
+          <p>Subscribe and save 10%.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="visit">
+      <h2>Visit us</h2>
+      <div class="visit">
+        <table aria-label="Opening hours">
+          <tbody id="hours">
+            <tr data-d="1"><td>Monday</td><td>7:00 – 16:00</td></tr>
+            <tr data-d="2"><td>Tuesday</td><td>7:00 – 16:00</td></tr>
+            <tr data-d="3"><td>Wednesday</td><td>7:00 – 16:00</td></tr>
+            <tr data-d="4"><td>Thursday</td><td>7:00 – 18:00</td></tr>
+            <tr data-d="5"><td>Friday</td><td>7:00 – 18:00</td></tr>
+            <tr data-d="6"><td>Saturday</td><td>8:00 – 17:00</td></tr>
+            <tr data-d="0"><td>Sunday</td><td>8:00 – 14:00</td></tr>
+          </tbody>
+        </table>
+        <div>
+          <address>
+            <strong>Saltwater Coffee Roasters</strong><br>
+            14 Quay Street<br>
+            Harbour District
+          </address>
+          <p>Dogs welcome on the patio. Free Wi‑Fi, no laptops at the counter after 11:00.</p>
+          <p><a href="mailto:hello@saltwatercoffee.example">hello@saltwatercoffee.example</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>© 2026 Saltwater Coffee Roasters</span>
+    <span>Open today until <b id="close">–</b></span>
+  </footer>
+</div>
+<script>
+(function(){
+  var d=new Date().getDay();
+  var row=document.querySelector('#hours tr[data-d="'+d+'"]');
+  if(row){
+    row.className='today';
+    var t=row.lastElementChild.textContent.split('–')[1];
+    if(t) document.getElementById('close').textContent=t.trim();
+  }
+})();
+</script>
+</body>
+</html>
